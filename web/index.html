@@ -97,7 +97,8 @@ body {
   background: linear-gradient(135deg, var(--dark-bg), var(--dark-bg-gradient-1), var(--dark-bg-gradient-2));
   background-attachment: fixed;
   min-height: 100vh;
-  position: relative;
+  overflow: hidden;
+  position: hidden;
 }
 
 body::before {
@@ -700,6 +701,52 @@ ol {
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
 }
 
+.protocol-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .protocol-name {
+                font-size: 0.8rem;
+            }
+            
+     .projects {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.project-icon {
+    width: 25px; /* Ukuran ikon lebih kecil */
+    height: 25px; /* Sesuaikan dengan lebar */
+    border-radius: 50%;
+    background: var(--icon-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 1rem; /* Ukuran font icon lebih kecil */
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+
+    /* Lingkaran biru tipis */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+}
+
+.project-name {
+    font-size: 0.7rem; /* Ukuran teks lebih kecil */
+}
+
         .action-buttons {
             display: flex;
             flex-direction: column;
@@ -862,16 +909,6 @@ ol {
             .profile-img {
                 width: 100px;
                 height: 100px;
-            }
-            
-            .protocol-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-            
-            .protocol-name {
-                font-size: 0.8rem;
             }
             
             .action-btn {
@@ -1037,38 +1074,6 @@ ol {
                 <p class="subtitle">Advanced V2ray Generator</p>
             </div>
             
-            <div class="nav-buttons">
-                <a href="/" class="nav-button active">
-                    <i class="fas fa-home"></i> Home
-                </a>
-                <a href="sub" class="nav-button">
-                    <i class="fas fa-rss"></i> Subscription
-                </a>
-                <a href="link" class="nav-button">
-                    <i class="fas fa-link"></i> Link Generator
-                </a>
-                <a href="converter" class="nav-button">
-                    <i class="fas fa-exchange-alt"></i> Converter
-                </a>
-                <a href="checker" class="nav-button">
-                    <i class="fas fa-cloud"></i> IP CF Checker
-                </a>
-            </div>
-            
-            <div class="profile-container">
-  <div class="profile-wrapper">
-    <img id="profileImage" src="https://raw.githubusercontent.com/jaka2m/mau/refs/heads/kepo/a.png" alt="Foto Profil" class="profile-img">
-    <div class="change-photo-overlay" onclick="document.getElementById('uploadInput').click();">Ganti Foto</div>
-  
-  <input type="file" id="uploadInput" accept="image/*">
-</div>
-<br>
-
-                <div class="status-badge">
-                    <i class="fas fa-circle"></i> Layanan Aktif
-                </div>
-            </div>
-            
             <div class="protocols">
                 <div class="protocol">
                     <div class="protocol-icon">
@@ -1095,10 +1100,63 @@ ol {
                     <span class="protocol-name">SHADOW</span>
                 </div>
             </div>
+            
+            <div class="profile-container">
+  <div class="profile-wrapper">
+    <img id="profileImage" src="https://raw.githubusercontent.com/jaka2m/mau/refs/heads/kepo/a.png" alt="Foto Profil" class="profile-img">
+    <div class="change-photo-overlay" onclick="document.getElementById('uploadInput').click();">Ganti Foto</div>
+  
+  <input type="file" id="uploadInput" accept="image/*">
+</div>
+<br>
+
+                <div class="status-badge">
+                    <i class="fas fa-circle"></i> Layanan Aktif
+                </div>
             </div>
-        </div>
-    </div>
-    
+            
+            <div class="projects">
+  <div class="project">
+    <a href="/" class="nav-button active">
+      <div class="project-icon">
+        <i class="fas fa-home"></i>
+      </div>
+      <span class="protocol-name">Home</span>
+    </a>
+  </div>
+  <div class="project">
+    <a href="sub" class="nav-button">
+      <div class="project-icon">
+        <i class="fas fas fa-rss"></i>
+      </div>
+      <span class="project-name">SUBS</span>
+    </a>
+  </div>
+  <div class="project">
+    <a href="link" class="nav-button">
+      <div class="project-icon">
+        <i class="fas fa-link"></i>
+      </div>
+      <span class="protocol-name">ACCOUNTS LINK</span>
+    </a>
+  </div>
+  <div class="project">
+    <a href="converter" class="nav-button">
+      <div class="project-icon">
+        <i class="fas fa-exchange-alt"></i>
+      </div>
+      <span class="project-name">CONVERT</span>
+    </a>
+  </div>
+  <div class="project">
+    <a href="checker" class="nav-button">
+      <div class="project-icon">
+        <i class="fas fa-cloud"></i>
+      </div>
+      <span class="project-name">IP CHECKER</span>
+    </a>
+  </div>
+
     <footer class="footer">
         <div class="circuit-line circuit-line-1"></div>
         <div class="circuit-line circuit-line-2"></div>
@@ -1111,14 +1169,6 @@ ol {
         
         <div class="footer-logo">GEO-PROJECT</div>
         <div class="footer-powered">POWERED BY SECURE TECHNOLOGY</div>
-        <div class="footer-social">
-            <a href="https://t.me/sampiiiiu" class="social-link" target="_blank">
-                <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.846 1.467 1.618 2.796 2.503 4.532.545 1.062 1.587 2.739 3.19 2.756 1.26.033 2.052-.6 3.542-1.95a142.91 142.91 0 0 1 2.43-2.053c1.686-.142 3.382-.284 5.12-.436.887-.075 1.92-.262 2.405-1.226.436-.877-.015-1.35-.48-1.874l-3.881-4.369-5.481-6.174S22.185 2.128 21.198 2.433z"></path>
-                    <path d="M18.167 7.068c.237 1.632-1.162 6.872-1.766 8.849"></path>
-                </svg>
-                @sampiiiiu
-            </a>
         </div>
     </footer>
     
